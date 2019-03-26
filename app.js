@@ -1,9 +1,11 @@
-const { generateText, createElement, validateInput } = require('./util');
+const { createElement, checkAndGenerate, validateAndLogin } = require('./util');
 
 const initApp = () => {
   // Initializes the app, registers the button click listener
   const newUserButton = document.querySelector('#btnAddUser');
+  const loginButton = document.querySelector('#btnLogin');
   newUserButton.addEventListener('click', addUser);
+  loginButton.addEventListener('click', signInUser);
 };
 
 const addUser = () => {
@@ -22,6 +24,19 @@ const addUser = () => {
 
   const element = createElement('li', outputText, 'user-item');
   userList.appendChild(element);
+};
+
+const signInUser = () => {
+  const emailInput = document.querySelector('input#email');
+  const passwordInput = document.querySelector('input#password');
+
+  const loginDetails = validateAndLogin(emailInput.value, passwordInput.value);
+
+  if (loginDetails) {
+    window.location.replace('/dashboard.html');
+  } else {
+    return false;
+  }
 };
 
 // Start the app!

@@ -1,5 +1,6 @@
 {
   "name": "js-testing-introduction",
+  "author": "Chisimdi Damian Ezeanieto",
   "version": "1.0.0",
   "description": "An introduction to JS testing",
   "main": "app.js",
@@ -19,7 +20,6 @@
     "e2e",
     "tests"
   ],
-  "author": "Maximilian Schwarzmüller/ Academind GmbH",
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.5.0",
